@@ -16,10 +16,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -47,40 +43,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun CounterApp(ViewModel:CounterViewModel){
-
-    Column (
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-
-    ){
-        Text("Count:${ViewModel.count.value}",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold
-            )
-        Spacer(modifier = Modifier.height(16.dp))
-        Row {
-            Button(onClick = {ViewModel.inc()}){
-                Text("Decrement")
-                
-            }
-            Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = { ViewModel.dec() }) {
-                Text("Increment")
-                
-            }
-            
-
-        }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun CounterAppPreview() {
-    CounterAppTheme {
-//        CounterApp(mo?)
-    }
-}
