@@ -42,29 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun CounterApp(){
-    var count by remember { mutableStateOf(0)}
-    Column (
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
 
-    ){
-        Text("Count:$count", style = MaterialTheme.typography.headlineMedium)
-        Row {
-            Button(onClick = { count = count-1 }){
-                Text("Decrement")
-                
-            }
-            Button(onClick = { count = count+1 }) {
-                Text("Increment")
-                
-            }
-
-        }
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
